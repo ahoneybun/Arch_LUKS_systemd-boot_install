@@ -2,21 +2,24 @@
 - Base Manjaro GNOME install     
 - Base Arch GNOME install         
 
-Using the AUR for system76 packages:
-
 # Packages needed:
+
+Using the AUR for system76 packages:
 
 ```
 sudo pacman -S base-devel git dfu-programmer efibootmgr rust typescript dmidecode dkms linux-headers at python-cffi python-distro python-evdev python-pynacl python-systemd python-xlib
 ```
 
-NOTE: For Manjaro make sure to match with the kernel version. Current Manjaro uses the 5.9 kernel so use #8. You can use this command to find the kernel version:
+---
+**NOTE**
+  For Manjaro make sure to match with the kernel version. Current Manjaro uses the 5.9 kernel so use #8. You can use this command to find the kernel version:
 
 ```
 uname -a
 ```
 
-NOTE: For any GNOME Shell extensions to show up in the Extensions application you will need to log out and back in.
+For any GNOME Shell extensions to show up in the Extensions application you will need to log out and back in.
+---
 
 ## Build and Install system76-firmware-daemon
 
@@ -101,12 +104,14 @@ sudo systemctl enable system76-power
 sudo systenctl start system76-power
 ```
 
-NOTE: 
+---
+**NOTE**
 
  If you are using a NVIDIA graphics card, you may need to add additional
     X11 config to make the GPU switching work, see below:
 
         https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Use_NVIDIA_graphics_only
+---
 
 ## Build and Install gnome-shell-extension-system76-power
 
@@ -126,7 +131,10 @@ makepkg -i
 
 ## Build and Install system76-driver
 
-NOTE: The AUR version is out of date.
+---
+**NOTE**
+The AUR version is out of date.
+---
 
 ### Download PKGBUILD package and untar it
 
@@ -144,7 +152,8 @@ sudo systemctl enable system76
 sudo systemctl start system76
 ```
 
-## Build and Install system76-io-dkms (this is only needed for the Thelio Io board)
+## Build and Install system76-io-dkms 
+(this is only needed for the Thelio Io board)
 
 ### Download PKGBUILD package and untar it
 
@@ -176,7 +185,8 @@ cd system76-acpi-dkms
 makepkg -i
 ```
 
-## Build and Install system76-oled (this is only needed for systems with OLED panels like the addw1/addw2)
+## Build and Install system76-oled 
+(this is only needed for systems with OLED panels like the addw1/addw2)
 
 ### Download PKGBUILD package and untar it
 
