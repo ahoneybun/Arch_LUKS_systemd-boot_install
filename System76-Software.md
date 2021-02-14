@@ -18,12 +18,7 @@ sudo pacman -S base-devel git dfu-programmer efibootmgr rust typescript dmidecod
 uname -a
 ```
 
----
-
----
-**NOTE**
 For any GNOME Shell extensions to show up in the Extensions application you will need to log out and back in.
----
 
 ## Build and Install system76-firmware-daemon
 
