@@ -83,7 +83,6 @@ mkswap /dev/***p3
 
 ```
 mount /dev/mapper/crypt_root /mnt
-mount /dev/***p1 /mnt/boot
 swapon /dev/***p3
 ```
 
@@ -145,6 +144,23 @@ myhostname
 
 ```
 mkinitcpio -P
+```
+
+Copy the kernel files:
+
+```
+cp initramfs-linux.img initramfs-linux-fallback.img vmlinuz-linux
+```
+
+Mount the Boot partition:
+
+```
+mount /dev/***p1 /boot
+bootctl install
+cp initramfs-linux.img /boot
+cp initramfs-linux-fallback.img /boot
+cp vmlinuz-linux /boot
+bootctl update
 ```
 
 ### Root password
