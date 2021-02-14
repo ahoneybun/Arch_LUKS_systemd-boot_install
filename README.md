@@ -40,7 +40,7 @@ cfdisk /dev/***
 | /mnt        | /dev/***p2 | Linux      | Left over           |
 | [SWAP]      | /dev/***p3 | Linux swap | 8GB (x2 Hibernation |
 
-**NOTE**
+**NOTE:**
 p1-3 is an example of using an M.2 NVMe drive. You can replace it with partition names like sda1 or sdb1 depending on your setup in the commands below.
 
 ### Setting up LUKS Encryption
@@ -179,6 +179,7 @@ initrd /initramfs-linux.img
 options cryptdevice=/dev/nvme0n1p2:crypt_root root=/dev/mapper/crypt_root quiet rw
 ```
 
+**NOTE:**
 Be sure to replace the cryptdevice partition name with your own.
 
 ### Root password
