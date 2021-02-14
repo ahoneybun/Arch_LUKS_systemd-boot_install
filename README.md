@@ -149,7 +149,9 @@ mkinitcpio -P
 Copy the kernel files:
 
 ```
-cp initramfs-linux.img initramfs-linux-fallback.img vmlinuz-linux
+cp initramfs-linux.img / 
+cp initramfs-linux-fallback.img / 
+cp vmlinuz-linux /
 ```
 
 Mount the Boot partition:
