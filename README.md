@@ -34,11 +34,11 @@ timedatectl set-ntp true
 cfdisk /dev/***
 ```
 
-| Mount Point | Partition  | Type       | Size      |
-|:-----------:|:----------:|:----------:|:---------:|
-| /mnt/boot   | /dev/***p1 | EFI System | 1GB       |
-| /mnt        | /dev/***p2 | Linux      | Left over |
-| [SWAP]      | /dev/***p3 | Linux swap | 8GB       |
+| Mount Point | Partition  | Type       | Size                |
+|:-----------:|:----------:|:----------:|:-------------------:|
+| /mnt/boot   | /dev/***p1 | EFI System | 1GB                 |
+| /mnt        | /dev/***p2 | Linux      | Left over           |
+| [SWAP]      | /dev/***p3 | Linux swap | 8GB (x2 Hibernation |
 
 ### Setting up LUKS Encryption
 

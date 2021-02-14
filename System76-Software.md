@@ -59,7 +59,9 @@ makepkg -i
 
 The Firmware Manager may need to be ran as root or with sudo to work correctly. You can add your user to the adm group to use the tool without sudo:
 
+```
 sudo gpasswd -a $USER adm
+```
 
 ---
 
