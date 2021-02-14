@@ -22,14 +22,14 @@ For any GNOME Shell extensions to show up in the Extensions application you will
 
 ## Build and Install system76-firmware-daemon
 
-### Download PKGBUILD package and untar it
+### Download PKGBUILD package and untar it:
 
 ```
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-firmware-daemon.tar.gz
 tar -xf system76-firmware-daemon.tar.gz
 ```
 
-### Run this command:
+### Run these commands:
 
 ```
 cd system76-firmware-daemon
@@ -45,7 +45,7 @@ sudo systemctl start system76-firmware-daemon
 
 ## Build and Install firmware-manager
 
-### Download PKGBUILD package and untar it
+### Download PKGBUILD package and untar it:
 
 ```
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/firmware-manager.tar.gz
@@ -71,14 +71,14 @@ These packages need to be installed in this order for them to complete their bui
 
 ## Build and Install system76-dkms
 
-### Download PKGBUILD package and untar it
+### Download PKGBUILD package and untar it:
 
 ```
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-dkms.tar.gz
 tar -xf system76-dkms.tar.gz
 ```
 
-### Run this command:
+### Run these commands:
 
 ```
 cd system76-dkms
@@ -87,14 +87,14 @@ makepkg -i
 
 ## Build and Install system76-power
 
-### Download PKGBUILD package and untar it
+### Download PKGBUILD package and untar it:
 
 ```
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-power.tar.gz
 tar -xf system76-power.tar.gz
 ```
 
-### Run this command:
+### Run these commands:
 
 ```
 cd system76-power
@@ -103,25 +103,23 @@ sudo systemctl enable system76-power
 sudo systenctl start system76-power
 ```
 
----
 **NOTE**
 
  If you are using a NVIDIA graphics card, you may need to add additional
     X11 config to make the GPU switching work, see below:
 
         https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Use_NVIDIA_graphics_only
----
 
 ## Build and Install gnome-shell-extension-system76-power
 
-### Download PKGBUILD package and untar it
+### Download PKGBUILD package and untar it:
 
 ```
 wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/gnome-shell-extension-system76-power.tar.gz
 tar -xf gnome-shell-extension-system76-power.tar.gz
 ```
 
-### Run this command:
+### Run these commands:
 
 ```
 cd gnome-shell-extension-system76-power
@@ -130,19 +128,17 @@ makepkg -i
 
 ## Build and Install system76-driver
 
----
 **NOTE**
 The AUR version is out of date.
----
 
-### Download PKGBUILD package and untar it
+### Download PKGBUILD package and untar it:
 
 ```
 wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-driver.tar.gz
 tar -xf system76-driver.tar.gz
 ```
 
-### Run this command:
+### Run these command:
 
 ```
 cd system76-driver
@@ -154,14 +150,14 @@ sudo systemctl start system76
 ## Build and Install system76-io-dkms 
 (this is only needed for the Thelio Io board)
 
-### Download PKGBUILD package and untar it
+### Download PKGBUILD package and untar it:
 
 ```
 wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-io-dkms.tar.gz
 tar -xf system76-io-dkms.tar.gz
 ```
 
-### Run this command:
+### Run these commands:
 
 ```
 cd system76-io-dkms
@@ -170,14 +166,14 @@ makepkg -i
 
 ## Build and Install system76-acpi-dkms
 
-### Download PKGBUILD package and untar it
+### Download PKGBUILD package and untar it:
 
 ```
 wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-acpi-dkms.tar.gz
 tar -xf system76-acpi-dkms
 ```
 
-### Run this command:
+### Run these commands:
 
 ```
 cd system76-acpi-dkms
@@ -187,14 +183,14 @@ makepkg -i
 ## Build and Install system76-oled 
 (this is only needed for systems with OLED panels like the addw1/addw2)
 
-### Download PKGBUILD package and untar it
+### Download PKGBUILD package and untar it:
 
 ```
 wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-oled.tar.gz
 tar -xf system76-oled.tar.gz
 ```
 
-### Run this command:
+### Run these commands:
 
 ```
 cd system76-acpi-oled
