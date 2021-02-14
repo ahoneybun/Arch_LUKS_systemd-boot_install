@@ -152,3 +152,9 @@ mkinitcpio -P
 ```
 passwd
 ```
+
+### Install needed packages for LUKS to work
+
+```
+pacman -S lvm2
+```
