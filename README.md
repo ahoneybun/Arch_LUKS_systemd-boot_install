@@ -1,5 +1,5 @@
 # Arch-LUKS-systemd-boot-install
-Config file and steps to install Arch encrypted with systemd-boot
+Config files and steps to install Arch encrypted LUKS and systemd-boot as the bootloader.
 
 This is the end partition layout using the steps below:
 
