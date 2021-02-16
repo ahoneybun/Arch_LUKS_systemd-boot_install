@@ -10,72 +10,72 @@ echo "-------------------------------------"
 sleep 2
 clear
 
-# clear
-# echo "---------------------------"
-# echo "| Installing dependencies |"
-# echo "---------------------------"
-# sleep 2
+clear
+echo "---------------------------"
+echo "| Installing dependencies |"
+echo "---------------------------"
+sleep 2
 
-# sudo pacman -S base-devel git dfu-programmer efibootmgr rust typescript dmidecode dkms linux-headers at python-cffi python-distro python-evdev python-pynacl python-systemd python-xlib wget
+sudo pacman -S base-devel git dfu-programmer efibootmgr rust typescript dmidecode dkms linux-headers at python-cffi python-distro python-evdev python-pynacl python-systemd python-xlib wget
 
-# clear
-# echo "----------------------------"
-# echo "| System76 Firmware Daemon" |
-# echo "----------------------------"
-# sleep 2
+clear
+echo "----------------------------"
+echo "| System76 Firmware Daemon" |
+echo "----------------------------"
+sleep 2
 
-# echo ""
-# echo "- Downloading from the AUR"
-# echo ""
+echo ""
+echo "- Downloading from the AUR"
+echo ""
 
-# wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-firmware-daemon.tar.gz
-# tar -xf system76-firmware-daemon.tar.gz
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-firmware-daemon.tar.gz
+tar -xf system76-firmware-daemon.tar.gz
 
-# echo ""
-# echo "- Entering the directory and building"
-# echo ""
+echo ""
+echo "- Entering the directory and building"
+echo ""
 
-# cd system76-firmware-daemon
-# makepkg -ic
-# cd ..
+cd system76-firmware-daemon
+makepkg -ic
+cd ..
  
-# echo ""
-# echo "- Enabling and starting services"
-# echo ""
+echo ""
+echo "- Enabling and starting services"
+echo ""
 
-# sudo systemctl enable system76-firmware-daemon
-# sudo systemctl start system76-firmware-daemon
+sudo systemctl enable system76-firmware-daemon
+sudo systemctl start system76-firmware-daemon
 
-# sleep 5
+sleep 5
 
-# clear
-# echo "-----------------------------"
-# echo "| System76 Firmware Manager |"
-# echo "-----------------------------"
-# sleep 2
+clear
+echo "-----------------------------"
+echo "| System76 Firmware Manager |"
+echo "-----------------------------"
+sleep 2
 
-# echo ""
-# echo "- Downloading from the AUR"
-# echo ""
+echo ""
+echo "- Downloading from the AUR"
+echo ""
 
-# wget https://aur.archlinux.org/cgit/aur.git/snapshot/firmware-manager.tar.gz
-# tar -xf firmware-manager.tar.gz
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/firmware-manager.tar.gz
+tar -xf firmware-manager.tar.gz
 
-# echo ""
-# echo "- Entering the directory and building"
-# echo ""
+echo ""
+echo "- Entering the directory and building"
+echo ""
 
-# cd firmware-manager
-# makepkg -ic
-# cd ..
+cd firmware-manager
+makepkg -ic
+cd ..
 
-# echo ""
-# echo "- Adding user to adm group"
-# echo ""
+echo ""
+echo "- Adding user to adm group"
+echo ""
 
-# sudo gpasswd -a $USER adm
+sudo gpasswd -a $USER adm
 
-# sleep 5
+sleep 5
 
 clear
 echo "-------------------------"
