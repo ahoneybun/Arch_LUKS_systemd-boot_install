@@ -141,7 +141,7 @@ echo ""
 echo "- Entering the directory and building"
 echo ""
 
-cd gnome-shell-extension-system76-power
+cd gnome-shell-extension-system76-power-git
 makepkg -ic
 cd ..
 
@@ -185,7 +185,7 @@ echo ""
 echo "- Downloading from the AUR"
 echo ""
 
-wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-acpi-dkms.tar.gz
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-acpi-dkms.tar.gz
 tar -xf system76-acpi-dkms.tar.gz
 
 echo ""
