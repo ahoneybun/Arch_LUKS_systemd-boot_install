@@ -10,7 +10,6 @@ echo "-------------------------------------"
 sleep 2
 clear
 
-clear
 echo "---------------------------"
 echo "| Installing dependencies |"
 echo "---------------------------"
@@ -18,9 +17,8 @@ sleep 2
 
 sudo pacman -S base-devel git dfu-programmer efibootmgr rust typescript dmidecode dkms linux-headers at python-cffi python-distro python-evdev python-pynacl python-systemd python-xlib wget
 
-clear
 echo "----------------------------"
-echo "| System76 Firmware Daemon" |
+echo "| System76 Firmware Daemon |"
 echo "----------------------------"
 sleep 2
 
@@ -48,7 +46,6 @@ sudo systemctl start system76-firmware-daemon
 
 sleep 5
 
-clear
 echo "-----------------------------"
 echo "| System76 Firmware Manager |"
 echo "-----------------------------"
@@ -77,7 +74,6 @@ sudo gpasswd -a $USER adm
 
 sleep 5
 
-clear
 echo "-------------------------"
 echo "| System76 DKMS package |"
 echo "-------------------------"
@@ -100,7 +96,6 @@ cd ..
 
 sleep 5
 
-clear
 echo "--------------------------"
 echo "| System76 Power package |"
 echo "--------------------------"
@@ -130,7 +125,6 @@ sudo systemctl start system76-power
 
 sleep 5
 
-clear
 echo "----------------------------------------"
 echo "| System76 Power GNOME Shell Extension |"
 echo "----------------------------------------"
@@ -141,7 +135,7 @@ echo "- Downloading from the AUR"
 echo ""
 
 wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/gnome-shell-extension-system76-power-git.tar.gz
-tar -xf gnome-shell-extension-system76-power.tar-git.gz
+tar -xf gnome-shell-extension-system76-power-git.tar.gz
 
 echo ""
 echo "- Entering the directory and building"
@@ -153,7 +147,6 @@ cd ..
 
 sleep 5
 
-clear
 echo "---------------------------"
 echo "| System76 Driver package |"                                      
 echo "---------------------------"
@@ -183,7 +176,6 @@ sudo systemctl start system76
 
 sleep 5
 
-clear
 echo "-------------------------"
 echo "| System76 ACPI package |"
 echo "-------------------------"
@@ -206,7 +198,6 @@ cd ..
 
 sleep 5
 
-clear
 echo "----------------------------"
 echo "| Is this a Thelio system? |"
 echo "| - Yes                    |"
@@ -226,7 +217,6 @@ No) break
 
 esac
 
-clear
 echo "---------------------------------------------"
 echo "| Is this an Adder WS (addw1/addw2) system? |"
 echo "| - Yes                                     |"
