@@ -134,7 +134,7 @@ echo ""
 echo "- Downloading from the AUR"
 echo ""
 
-wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/gnome-shell-extension-system76-power-git.tar.gz
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/gnome-shell-extension-system76-power-git.tar.gz
 tar -xf gnome-shell-extension-system76-power-git.tar.gz
 
 echo ""
@@ -156,7 +156,7 @@ echo ""
 echo "- Downloading from the AUR"
 echo ""
 
-wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-driver.tar.gz
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-driver.tar.gz
 tar -xf system76-driver.tar.gz
 
 echo ""
