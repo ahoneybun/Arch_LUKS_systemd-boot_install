@@ -7,62 +7,53 @@
 Using the AUR for system76 packages:
 
 ```
-sudo pacman -S base-devel git dfu-programmer efibootmgr rust typescript dmidecode dkms linux-headers at python-cffi python-distro python-evdev python-pynacl python-systemd python-xlib
+sudo pacman -S --needed base-devel git linux-headers
 ```
 
 ---
 **NOTE**
-  For Manjaro make sure to match with the kernel version. Current Manjaro uses the 5.9 kernel so use #8. You can use this command to find the kernel version:
+  For Manjaro make sure to match with the kernel version. Manjaro offers several kernels including the latest stable and LTS versions. You can use this command to find the kernel version:
 
 ```
-uname -a
+uname -r
 ```
 
 For any GNOME Shell extensions to show up in the Extensions application you will need to log out and back in.
 
-## Build and Install system76-firmware-daemon
+## Build and Install system76-firmware
 
-### Download PKGBUILD package and untar it:
+### Download PKGBUILD:
 
 ```
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-firmware-daemon.tar.gz
-tar -xf system76-firmware-daemon.tar.gz
+git clone https://aur.archlinux.org/system76-firmware.git
 ```
 
 ### Run these commands:
 
 ```
 cd system76-firmware-daemon
-makepkg -i
+makepkg -srcif
 ```
  
 ### Now to enable and start the service:
 
 ```
-sudo systemctl enable system76-firmware-daemon
-sudo systemctl start system76-firmware-daemon
+sudo systemctl enable --now system76-firmware-daemon
 ```
 
 ## Build and Install firmware-manager
 
-### Download PKGBUILD package and untar it:
+### Download PKGBUILD:
 
 ```
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/firmware-manager.tar.gz
-tar -xf firmware-manager.tar.gz
+git clone https://aur.archlinux.org/firmware-manager.git
 ```
 
 ### Run these commands:
 
 ```
 cd firmware-manager
-makepkg -i
-```
-
-The Firmware Manager may need to be ran as root or with sudo to work correctly. You can add your user to the adm group to use the tool without sudo:
-
-```
-sudo gpasswd -a $USER adm
+makepkg -srcif
 ```
 
 ---
@@ -71,36 +62,33 @@ These packages need to be installed in this order for them to complete their bui
 
 ## Build and Install system76-dkms
 
-### Download PKGBUILD package and untar it:
+### Download PKGBUILD:
 
 ```
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-dkms.tar.gz
-tar -xf system76-dkms.tar.gz
+git clone https://aur.archlinux.org/system76-dkms.git
 ```
 
 ### Run these commands:
 
 ```
 cd system76-dkms
-makepkg -i
+makepkg -srcif
 ```
 
 ## Build and Install system76-power
 
-### Download PKGBUILD package and untar it:
+### Download PKGBUILD:
 
 ```
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-power.tar.gz
-tar -xf system76-power.tar.gz
+git clone https://aur.archlinux.org/system76-power.git
 ```
 
 ### Run these commands:
 
 ```
 cd system76-power
-makepkg -i
-sudo systemctl enable system76-power
-sudo systenctl start system76-power
+makepkg -srcif
+sudo systemctl enable --now system76-power
 ```
 
 **NOTE**
@@ -112,87 +100,81 @@ sudo systenctl start system76-power
 
 ## Build and Install gnome-shell-extension-system76-power
 
-### Download PKGBUILD package and untar it:
+### Download PKGBUILD:
 
 ```
-wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/gnome-shell-extension-system76-power.tar.gz
-tar -xf gnome-shell-extension-system76-power.tar.gz
+git clone https://aur.archlinux.org/gnome-shell-extension-system76-power-git.git
 ```
 
 ### Run these commands:
 
 ```
 cd gnome-shell-extension-system76-power
-makepkg -i
+makepkg -srcif
 ```
 
 ## Build and Install system76-driver
 
 **NOTE**
-The AUR version is out of date.
+The package is currently is out of date.
 
-### Download PKGBUILD package and untar it:
+### Download PKGBUILD:
 
 ```
-wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-driver.tar.gz
-tar -xf system76-driver.tar.gz
+git clone https://aur.archlinux.org/system76-driver.git
 ```
 
 ### Run these command:
 
 ```
 cd system76-driver
-makepkg -i
-sudo systemctl enable system76
-sudo systemctl start system76
+makepkg -srcif
+sudo systemctl enable --now system76
 ```
 
 ## Build and Install system76-io-dkms 
 (this is only needed for the Thelio Io board)
 
-### Download PKGBUILD package and untar it:
+### Download PKGBUILD:
 
 ```
-wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-io-dkms.tar.gz
-tar -xf system76-io-dkms.tar.gz
+git clone https://aur.archlinux.org/system76-io-dkms.git
 ```
 
 ### Run these commands:
 
 ```
 cd system76-io-dkms
-makepkg -i
+makepkg -srcif
 ```
 
 ## Build and Install system76-acpi-dkms
 
-### Download PKGBUILD package and untar it:
+### Download PKGBUILD:
 
 ```
-wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-acpi-dkms.tar.gz
-tar -xf system76-acpi-dkms
+git clone https://aur.archlinux.org/system76-acpi-dkms.git
 ```
 
 ### Run these commands:
 
 ```
 cd system76-acpi-dkms
-makepkg -i
+makepkg -srcif
 ```
 
 ## Build and Install system76-oled 
 (this is only needed for systems with OLED panels like the addw1/addw2)
 
-### Download PKGBUILD package and untar it:
+### Download PKGBUILD:
 
 ```
-wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-oled.tar.gz
-tar -xf system76-oled.tar.gz
+git clone https://aur.archlinux.org/system76-oled.git
 ```
 
 ### Run these commands:
 
 ```
 cd system76-acpi-oled
-makepkg -i
+makepkg -srcif
 ```
