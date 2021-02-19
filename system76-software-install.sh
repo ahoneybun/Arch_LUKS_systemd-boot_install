@@ -15,10 +15,10 @@ echo "| Installing dependencies |"
 echo "---------------------------"
 sleep 2
 
-sudo pacman -S base-devel git dfu-programmer efibootmgr rust typescript dmidecode dkms linux-headers at python-cffi python-distro python-evdev python-pynacl python-systemd python-xlib wget
+sudo pacman -S --needed base-devel git linux-headers
 
 echo "----------------------------"
-echo "| System76 Firmware Daemon |"
+echo "| System76 Firmware |"
 echo "----------------------------"
 sleep 2
 
@@ -26,23 +26,21 @@ echo ""
 echo "- Downloading from the AUR"
 echo ""
 
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-firmware-daemon.tar.gz
-tar -xf system76-firmware-daemon.tar.gz
+git clone https://aur.archlinux.org/system76-firmware.git
 
 echo ""
 echo "- Entering the directory and building"
 echo ""
 
-cd system76-firmware-daemon
-makepkg -ic
+cd system76-firmware
+makepkg -srcif
 cd ..
- 
+
 echo ""
 echo "- Enabling and starting services"
 echo ""
 
-sudo systemctl enable system76-firmware-daemon
-sudo systemctl start system76-firmware-daemon
+sudo systemctl enable --now system76-firmware-daemon
 
 sleep 5
 
@@ -55,22 +53,15 @@ echo ""
 echo "- Downloading from the AUR"
 echo ""
 
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/firmware-manager.tar.gz
-tar -xf firmware-manager.tar.gz
+git clone https://aur.archlinux.org/firmware-manager.git
 
 echo ""
 echo "- Entering the directory and building"
 echo ""
 
 cd firmware-manager
-makepkg -ic
+makepkg -srcif
 cd ..
-
-echo ""
-echo "- Adding user to adm group"
-echo ""
-
-sudo gpasswd -a $USER adm
 
 sleep 5
 
@@ -83,15 +74,14 @@ echo ""
 echo "- Downloading from the AUR"
 echo ""
 
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-dkms.tar.gz
-tar -xf system76-dkms.tar.gz
+git clone https://aur.archlinux.org/system76-dkms.git
 
 echo ""
 echo "- Entering the directory and building"
 echo ""
 
 cd system76-dkms
-makepkg -ic
+makepkg -srcif
 cd ..
 
 sleep 5
@@ -105,23 +95,21 @@ echo ""
 echo "- Downloading from the AUR"
 echo ""
 
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-power.tar.gz
-tar -xf system76-power.tar.gz
+git clone https://aur.archlinux.org/system76-power.git
 
 echo ""
 echo "- Entering the directory and building"
 echo ""
 
 cd system76-power
-makepkg -ic
+makepkg -srcif
 cd ..
 
 echo ""
 echo "- Enabling and starting services"
 echo ""
 
-sudo systemctl enable system76-power
-sudo systemctl start system76-power
+sudo systemctl enable --now system76-power
 
 sleep 5
 
@@ -134,21 +122,20 @@ echo ""
 echo "- Downloading from the AUR"
 echo ""
 
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/gnome-shell-extension-system76-power-git.tar.gz
-tar -xf gnome-shell-extension-system76-power-git.tar.gz
+git clone https://aur.archlinux.org/gnome-shell-extension-system76-power-git.git
 
 echo ""
 echo "- Entering the directory and building"
 echo ""
 
 cd gnome-shell-extension-system76-power-git
-makepkg -ic
+makepkg -srcif
 cd ..
 
 sleep 5
 
 echo "---------------------------"
-echo "| System76 Driver package |"                                      
+echo "| System76 Driver package |"
 echo "---------------------------"
 sleep 2
 
@@ -156,23 +143,21 @@ echo ""
 echo "- Downloading from the AUR"
 echo ""
 
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-driver.tar.gz
-tar -xf system76-driver.tar.gz
+git clone https://aur.archlinux.org/system76-driver.git
 
 echo ""
 echo "- Entering the directory and building"
 echo ""
 
 cd system76-driver
-makepkg -ic
+makepkg -srcif
 cd ..
 
 echo ""
 echo "- Enabling and starting services"
 echo ""
 
-sudo systemctl enable system76
-sudo systemctl start system76
+sudo systemctl enable --now system76
 
 sleep 5
 
@@ -185,15 +170,14 @@ echo ""
 echo "- Downloading from the AUR"
 echo ""
 
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-acpi-dkms.tar.gz
-tar -xf system76-acpi-dkms.tar.gz
+git clone https://aur.archlinux.org/system76-acpi-dkms.git
 
 echo ""
 echo "- Entering the directory and building"
 echo ""
 
 cd system76-acpi-dkms
-makepkg -ic
+makepkg -srcif
 cd ..
 
 sleep 5
@@ -207,10 +191,9 @@ echo "----------------------------"
 echo -n ": "; read thelio
 case "$thelio" in
 
-Yes) wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-io-dkms.tar.gz
-   tar -xf system76-io-dkms.tar.gz
+Yes) git clone https://aur.archlinux.org/system76-io-dkms.git
    cd system76-io-dkms
-   makepkg -ic
+   makepkg -srcif
    cd ..
    ;;
 No) break
@@ -226,10 +209,9 @@ echo "---------------------------------------------"
 echo -n ": "; read addw
 case "$addw" in
 
-Yes) wget wget https://aur.archlinux.org/cgit/aur.git/snapshot/system76-oled.tar.gz
-   tar -xf system76-oled.tar.gz
+Yes) git clone https://aur.archlinux.org/system76-oled.git
    cd system76-oled
-   makepkg -ic
+   makepkg -srcif
    cd ..
    ;;
 No) exit 1
@@ -239,7 +221,7 @@ esac
 # Clean up
 # ---
 
- sudo rm -r system76-firmware-daemon*
+ sudo rm -r system76-firmware*
  sudo rm -r firmware-manager*
  sudo rm -r system76-dkms*
  sudo rm -r system76-power*
