@@ -17,6 +17,12 @@ echo ""
 sudo pacman -S --needed noto-fonts-cjk noto-fonts-emoji noto-fonts
 
 echo ""
+echo "- Installing Firefox, Thunderbird, Tilix, Fish, Flatpak, neofetch, Telegram"
+echo ""
+
+sudo pacman -S --needed firefox thunderbird tilix, fish, flatpak, neofetch, telegram-desktop
+
+echo ""
 echo "- Downloading Pika Backup from AUR"
 echo ""
 
