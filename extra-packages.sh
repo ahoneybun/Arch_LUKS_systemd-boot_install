@@ -23,6 +23,14 @@ echo ""
 sudo pacman -S --needed firefox thunderbird tilix, fish, flatpak, telegram-desktop
 
 echo ""
+echo "- Setting up Yubikey Support"
+echo ""
+
+echo 'KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0664", GROUP="users", ATTRS{idVendor}=="2581", ATTRS{idProduct}=="f1d0"' | sudo tee /etc/udev/rules.d/10-security-key.rules
+sudo pacman -S libu2f-host
+sudo systemctl enable pcscd
+
+echo ""
 echo "- Installing development packages"
 echo ""
 
@@ -55,3 +63,9 @@ echo ""
 cd visual-studio-code-bin
 makepkg -srcif
 cd ..
+
+echo ""
+echo "- Rebooting the system as needed for Yubikey Support"
+echo ""
+
+sudo systemctl reboot
