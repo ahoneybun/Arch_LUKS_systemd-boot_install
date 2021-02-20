@@ -65,6 +65,34 @@ makepkg -srcif
 cd ..
 
 echo ""
+echo "- Downloading Pop Shell Shortcuts"
+echo ""
+
+git clone https://aur.archlinux.org/pop-shell-shortcuts-git
+
+echo ""
+echo "- Building Pop Shell Shortcuts"
+echo ""
+
+cd pop-shell-shortcuts-git
+makepkg -srcif
+cd ..
+
+echo ""
+echo "- Downloading Pop Shell"
+echo ""
+
+git clone https://github.com/pop-os/shell.git
+
+echo ""
+echo "= Building Pop Shell"
+echo ""
+
+cd shell
+make local-install
+cd ..
+
+echo ""
 echo "- Rebooting the system as needed for Yubikey Support"
 echo ""
 
