@@ -20,7 +20,7 @@ echo ""
 echo "- Installing Firefox, Thunderbird, Tilix, Fish, Flatpak, Telegram, Discord"
 echo ""
 
-sudo pacman -S --needed firefox thunderbird tilix, fish, flatpak, telegram-desktop, discord
+sudo pacman -S --needed firefox thunderbird tilix fish flatpak telegram-desktop discord
 
 echo ""
 echo "- Setting up Yubikey Support"
@@ -34,7 +34,7 @@ echo ""
 echo "- Installing development packages"
 echo ""
 
-sudo pacman -S --needed neofetch rust tree rygel typescript
+sudo pacman -S --needed neofetch rust tree rygel typescript make
 
 echo ""
 echo "- Downloading Pika Backup from AUR"
@@ -54,7 +54,7 @@ echo ""
 echo "- Downloading Visual Studio Code from AUR"
 echo ""
 
-git clone https://aur.archlinux.org/visual-studio-code-bin
+git clone https://aur.archlinux.org/visual-studio-code-bin.git
 
 echo ""
 echo "- Building Visual Studio Code"
