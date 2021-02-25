@@ -46,11 +46,11 @@ timedatectl set-ntp true
 cfdisk /dev/***
 ```
 
-| Mount Point | Partition  | Type       | Size                |
-|:-----------:|:----------:|:----------:|:-------------------:|
-| /mnt/boot   | /dev/***p1 | EFI System | 1GB                 |
-| /mnt        | /dev/***p2 | Linux      | Left over           |
-| [SWAP]      | /dev/***p3 | Linux swap | 8GB (x2 Hibernation |
+| Mount Point | Partition  | Type       | Size                 |
+|:-----------:|:----------:|:----------:|:--------------------:|
+| /mnt/boot   | /dev/***p1 | EFI System | 1GB                  |
+| /mnt        | /dev/***p2 | Linux      | Left over            |
+| [SWAP]      | /dev/***p3 | Linux swap | 8GB (x2 Hibernation) |
 
 **NOTE:**
 p1-3 is an example of using an M.2 NVMe drive. You can replace it with partition names like sda1 or sdb1 depending on your setup in the commands below.
