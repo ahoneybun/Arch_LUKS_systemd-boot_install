@@ -201,7 +201,7 @@ No) break
 esac
 
 echo "---------------------------------------------"
-echo "| Is this an Adder WS (addw1/addw2) system? |"
+echo "| Does your system have an OLED panel?      |"
 echo "| - Yes                                     |"
 echo "| - No                                      |"
 echo "---------------------------------------------"
