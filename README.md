@@ -250,6 +250,12 @@ usermod -aG wheel aaronh
 EDITOR=nano visudo
 ```
 
+### Enable NetworkManager
+
+```
+systemctl enable NetworkManager
+```
+
 # Sources used
 - https://linuxhint.com/setup-luks-encryption-on-arch-linux/
 - https://gist.github.com/OdinsPlasmaRifle/e16700b83624ff44316f87d9cdbb5c94
