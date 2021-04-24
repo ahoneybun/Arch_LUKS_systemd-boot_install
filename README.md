@@ -90,7 +90,7 @@ ls /dev/mapper/
 
 ```
 mkfs.fat -F32 /dev/***p1
-mkfs.ext4 /dev/***p2
+mkfs.ext4 /dev/mapper/crypt_root
 mkswap /dev/***p3
 ```
 
@@ -155,6 +155,22 @@ myhostname
 127.0.0.1   myhostname.localdomain myhostname
 ```
 
+### mkinitcpio.conf
+
+Next edit the `mkinitcpio.conf` file and change this section:
+
+```
+HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)
+```
+
+to this:
+
+```
+HOOKS=(base udev autodetect modconf block encrypt filesystems keyboard fsck)
+```
+
+Note the new encrypt line and it's position.
+
 ### InitramFS
 
 ```
@@ -204,6 +220,20 @@ passwd
 
 ```
 pacman -S lvm2
+```
+
+
+### install GNOME and set it up
+
+```
+pacman -S gnome gnome-software-packagekit-plugin
+systemctl enable gdm
+```
+
+### Install iwd for Internet just in case!
+
+```
+pacman -S iwd
 ```
 
 # Sources used
