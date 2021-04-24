@@ -236,6 +236,20 @@ systemctl enable gdm
 pacman -S iwd
 ```
 
+### Add admin user
+
+```
+useradd -m aaronh
+passwd aaronh
+usermod -aG wheel aaronh
+```
+
+### Remove comment for wheel group
+
+```
+EDITOR=nano visudo
+```
+
 # Sources used
 - https://linuxhint.com/setup-luks-encryption-on-arch-linux/
 - https://gist.github.com/OdinsPlasmaRifle/e16700b83624ff44316f87d9cdbb5c94
