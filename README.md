@@ -90,8 +90,14 @@ ls /dev/mapper/
 
 ```
 mkfs.fat -F32 /dev/***p1
-mkfs.ext4 /dev/mapper/crypt_root
+mkfs.ext4 -L root /dev/mapper/crypt_root
 mkswap /dev/***p3
+```
+
+Use this command instead of `mkfs.ext4` for btrfs:
+
+```
+mkfs.btrfs -L root /dev/mapper/crypt_root
 ```
 
 ### Mount the partitions
