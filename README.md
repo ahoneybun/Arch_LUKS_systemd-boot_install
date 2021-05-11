@@ -110,7 +110,7 @@ swapon /dev/***p3
 ### Install Arch
 
 ```
-pacstrap /mnt base base-devel linux linux-headers linux-firmware
+pacstrap /mnt base base-devel linux linux-headers linux-firmware nano lvm2
 ```
 
 ### FStab 
@@ -200,7 +200,6 @@ cp initramfs-linux.img /boot
 cp initramfs-linux-fallback.img /boot
 cp vmlinuz-linux /boot
 bootctl update
-pacman -S nano
 nano /boot/loader/entries/arch.conf
 ```
 
@@ -221,13 +220,6 @@ Be sure to replace the cryptdevice partition name with your own.
 ```
 passwd
 ```
-
-### Install needed packages for LUKS to work
-
-```
-pacman -S lvm2
-```
-
 
 ### install GNOME and set it up
 
