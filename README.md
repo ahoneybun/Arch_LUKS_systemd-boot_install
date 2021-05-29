@@ -173,7 +173,7 @@ HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)
 to this:
 
 ```
-HOOKS=(base udev autodetect modconf block encrypt filesystems keyboard fsck)
+HOOKS=(base udev autodetect modconf block sd-encrypt filesystems keyboard fsck)
 ```
 
 Note the new encrypt line and it's position.
@@ -184,23 +184,9 @@ Note the new encrypt line and it's position.
 mkinitcpio -P
 ```
 
-Copy the kernel files:
+### Create the boot entry for systemd-boot
 
 ```
-cp initramfs-linux.img / 
-cp initramfs-linux-fallback.img / 
-cp vmlinuz-linux /
-```
-
-Mount the Boot partition:
-
-```
-mount /dev/***p1 /boot
-bootctl install
-cp initramfs-linux.img /boot
-cp initramfs-linux-fallback.img /boot
-cp vmlinuz-linux /boot
-bootctl update
 nano /boot/loader/entries/arch.conf
 ```
 
