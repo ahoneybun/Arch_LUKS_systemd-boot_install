@@ -1,5 +1,5 @@
 # To-Do List
-[x] -Create a bash script to auto-magically install the System76 Drivers on Arch-based systems
+- [x] -Create a bash script to auto-magically install the System76 Drivers on Arch-based systems
 
 ## Arch-LUKS-systemd-boot-install
 Config files and steps to install Arch encrypted LUKS and systemd-boot as the bootloader.
