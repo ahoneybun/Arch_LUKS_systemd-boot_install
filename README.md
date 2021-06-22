@@ -188,6 +188,12 @@ Note the new encrypt line and it's position.
 mkinitcpio -P
 ```
 
+### Install systemd-boot
+
+```
+bootctl install
+```
+
 ### Create the boot entry for systemd-boot
 
 ```
