@@ -1,8 +1,3 @@
-# To-Do List
-- [ ] Item 1
-- [ ] Item 2
-- [ ] Item 3
-
 a bash script to auto-magically install the System76 Drivers on Arch-based systems which you can find here: https://github.com/ahoneybun/Install-Other-System76/blob/main/Arch-based/install-software.sh
 
 ## Arch-LUKS-systemd-boot-install
@@ -81,7 +76,7 @@ Command successful
 Next we'll open the partition to install Arch:
 
 ```
-cryptsetup luksOpen /dev/***p2 crypt_root
+cryptsetup luksOpen /dev/***p2 crypt-root
 ```
 
 Now the partition will be at the following location:
@@ -94,20 +89,20 @@ ls /dev/mapper/
 
 ```
 mkfs.fat -F32 -n EFI/dev/***p1
-mkfs.ext4 -L root /dev/mapper/crypt_root
+mkfs.ext4 -L root /dev/mapper/crypt-root
 mkswap -L swap /dev/***p3
 ```
 
 Use this command instead of `mkfs.ext4` for btrfs:
 
 ```
-mkfs.btrfs -L root /dev/mapper/crypt_root
+mkfs.btrfs -L root /dev/mapper/crypt-root
 ```
 
 ### Mount the partitions
 
 ```
-mount /dev/mapper/crypt_root /mnt
+mount /dev/mapper/crypt-root /mnt
 mount /dev/nvm0n1p1 /mnt/boot
 swapon /dev/***p3
 ```
@@ -206,7 +201,7 @@ Now we'll place these lines in the `arch.conf` file:
 title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
-options cryptdevice=/dev/nvme0n1p2:crypt_root root=/dev/mapper/crypt_root quiet rw
+options cryptdevice=/dev/nvme0n1p2:crypt-root root=/dev/mapper/crypt-root rw
 ```
 
 **NOTE:**
