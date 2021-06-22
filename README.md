@@ -108,7 +108,7 @@ mkfs.btrfs -L root /dev/mapper/crypt_root
 
 ```
 mount /dev/mapper/crypt_root /mnt
-mount /dev/nvm0n1p1 /mnt/boot/efi
+mount /dev/nvm0n1p1 /mnt/boot
 swapon /dev/***p3
 ```
 
