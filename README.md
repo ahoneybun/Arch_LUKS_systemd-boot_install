@@ -154,7 +154,7 @@ Create the `/etc/locale.conf` with this content:
 LANG=en_US.UTF-8
 ```
 
-Setting hosts (`/etc/hosts`) and hostname (`/etc/hostname`) files:
+Setting hosts `/etc/hosts` and hostname (`/etc/hostname`) files:
 
 ```
 myhostname
@@ -168,7 +168,7 @@ myhostname
 
 ### mkinitcpio.conf
 
-Next edit the `mkinitcpio.conf` file and change this section:
+Next edit the `/etc/mkinitcpio.conf` file and change this section:
 
 ```
 HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)
