@@ -152,13 +152,13 @@ LANG=en_US.UTF-8
 Setting hosts `/etc/hosts` and hostname (`/etc/hostname`) files:
 
 ```
-myhostname
-```
-
-```
 127.0.0.1   localhost
 ::1         localhost
 127.0.0.1   myhostname.localdomain myhostname
+```
+
+```
+myhostname
 ```
 
 ### mkinitcpio.conf
