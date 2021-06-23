@@ -172,7 +172,7 @@ HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)
 to this:
 
 ```
-HOOKS=(base udev autodetect modconf block sd-encrypt filesystems keyboard fsck)
+HOOKS=(base udev autodetect modconf block keyboard encrypt lvm2 filesystems fsck)
 ```
 
 Note the new encrypt line and it's position.
