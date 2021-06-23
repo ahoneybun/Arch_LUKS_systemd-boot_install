@@ -175,6 +175,12 @@ to this:
 HOOKS=(base udev autodetect modconf block keyboard encrypt lvm2 filesystems fsck)
 ```
 
+Or this layout if you want to hibernate:
+
+```
+HOOKS=(base udev autodetect modconf block keyboard encrypt lvm2 filesystems resume fsck)
+```
+
 Note the new encrypt line and it's position.
 
 ### InitramFS
@@ -202,6 +208,12 @@ title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
 options cryptdevice=/dev/nvme0n1p2:crypt-root root=/dev/mapper/crypt-root rw
+```
+
+Use this line if you are going to hibernate:
+
+```
+options cryptdevice=/dev/nvme0n1p2:crypt-root root=/dev/mapper/crypt-root resume=/dev/nvme0n1p3 rw
 ```
 
 **NOTE:**
