@@ -93,31 +93,23 @@ mkfs.ext4 -L root /dev/mapper/crypt-root
 mkswap -L swap /dev/***p3
 ```
 
-Use this command instead of `mkfs.ext4` for btrfs:
-
-```
-mkfs.btrfs -L root /dev/mapper/crypt-root
-```
-
 ### Mount the partitions
 
 ```
 mount /dev/mapper/crypt-root /mnt
-mount /dev/nvm0n1p1 /mnt/boot
 swapon /dev/***p3
-```
-
-If you are using BTRFS and want to have root and home on subvolumes use these commands
-
-```
-btrfs sub create /mnt/@
-btrfs sub create /mnt/@home
 ```
 
 ### Install Arch
 
 ```
 pacstrap /mnt base base-devel linux linux-headers linux-firmware nano lvm2
+```
+
+### Mount /boot
+
+```
+mount /dev/***p1 /mnt/boot
 ```
 
 ### FStab 
