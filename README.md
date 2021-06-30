@@ -251,9 +251,10 @@ usermod -aG wheel aaronh
 EDITOR=nano visudo
 ```
 
-### Enable NetworkManager
+### Install and enable NetworkManager
 
 ```
+pacman -S networkmanager
 systemctl enable NetworkManager
 ```
 
