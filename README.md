@@ -107,6 +107,13 @@ mount /dev/nvm0n1p1 /mnt/boot
 swapon /dev/***p3
 ```
 
+If you are using BTRFS and want to have root and home on subvolumes use these commands
+
+```
+btrfs sub create /mnt/@
+btrfs sub create /mnt/@home
+```
+
 ### Install Arch
 
 ```
