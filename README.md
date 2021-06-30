@@ -180,12 +180,6 @@ Or this layout if you want to hibernate:
 HOOKS=(base udev autodetect modconf block keyboard encrypt lvm2 filesystems resume fsck)
 ```
 
-Be sure to install this pacman if you are using BTRFS
-
-```
-pacman -S btrfs-progs
-```
-
 Note the new encrypt line and it's position.
 
 ### InitramFS
