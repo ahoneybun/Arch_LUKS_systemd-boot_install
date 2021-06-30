@@ -88,7 +88,7 @@ ls /dev/mapper/
 ### Format the partitions
 
 ```
-mkfs.fat -F32 -n EFI/dev/***p1
+mkfs.fat -F32 -n EFI /dev/***p1
 mkfs.ext4 -L root /dev/mapper/crypt-root
 mkswap -L swap /dev/***p3
 ```
