@@ -224,13 +224,6 @@ Be sure to replace the cryptdevice partition name with your own.
 passwd
 ```
 
-### install GNOME and set it up
-
-```
-pacman -S gnome gnome-software-packagekit-plugin
-systemctl enable gdm
-```
-
 ### Install iwd for Internet just in case!
 
 ```
