@@ -101,19 +101,15 @@ mkswap -L swap /dev/***p3
 
 ```
 mount /dev/mapper/crypt-root /mnt
+mount /dev/***p1 /mnt/boot
 swapon /dev/***p3
 ```
+
 
 ### Install Arch
 
 ```
 pacstrap /mnt base base-devel linux linux-headers linux-firmware nano lvm2
-```
-
-### Mount /boot
-
-```
-mount /dev/***p1 /mnt/boot
 ```
 
 ### FStab 
