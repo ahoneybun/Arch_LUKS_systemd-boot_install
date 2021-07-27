@@ -115,7 +115,7 @@ pacstrap /mnt base base-devel linux linux-headers linux-firmware nano lvm2
 ### FStab 
 
 ```
-genfsab -U /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
 ### Chroot
