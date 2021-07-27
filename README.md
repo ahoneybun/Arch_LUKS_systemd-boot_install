@@ -92,22 +92,15 @@ ls /dev/mapper/
 ### Format the partitions
 
 ```
-mkfs.fat -F32 -n EFI/dev/***p1
+mkfs.fat -F32 -n EFI /dev/***p1
 mkfs.ext4 -L root /dev/mapper/crypt-root
 mkswap -L swap /dev/***p3
-```
-
-Use this command instead of `mkfs.ext4` for btrfs:
-
-```
-mkfs.btrfs -L root /dev/mapper/crypt-root
 ```
 
 ### Mount the partitions
 
 ```
 mount /dev/mapper/crypt-root /mnt
-mount /dev/nvm0n1p1 /mnt/boot
 swapon /dev/***p3
 ```
 
@@ -115,6 +108,12 @@ swapon /dev/***p3
 
 ```
 pacstrap /mnt base base-devel linux linux-headers linux-firmware nano lvm2
+```
+
+### Mount /boot
+
+```
+mount /dev/***p1 /mnt/boot
 ```
 
 ### FStab 
@@ -179,6 +178,12 @@ to this:
 HOOKS=(base udev autodetect modconf block keyboard encrypt lvm2 filesystems fsck)
 ```
 
+Or this layout if you want to hibernate:
+
+```
+HOOKS=(base udev autodetect modconf block keyboard encrypt lvm2 filesystems resume fsck)
+```
+
 Note the new encrypt line and it's position.
 
 ### InitramFS
@@ -208,6 +213,12 @@ initrd /initramfs-linux.img
 options cryptdevice=/dev/nvme0n1p2:crypt-root root=/dev/mapper/crypt-root rw
 ```
 
+Use this line if you are going to hibernate:
+
+```
+options cryptdevice=/dev/nvme0n1p2:crypt-root root=/dev/mapper/crypt-root resume=/dev/nvme0n1p3 rw
+```
+
 **NOTE:**
 Be sure to replace the cryptdevice partition name with your own.
 
@@ -215,13 +226,6 @@ Be sure to replace the cryptdevice partition name with your own.
 
 ```
 passwd
-```
-
-### install GNOME and set it up
-
-```
-pacman -S gnome gnome-software-packagekit-plugin
-systemctl enable gdm
 ```
 
 ### Install iwd for Internet just in case!
@@ -244,9 +248,10 @@ usermod -aG wheel aaronh
 EDITOR=nano visudo
 ```
 
-### Enable NetworkManager
+### Install and enable NetworkManager
 
 ```
+pacman -S networkmanager
 systemctl enable NetworkManager
 ```
 
