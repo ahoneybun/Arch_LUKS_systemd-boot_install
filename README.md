@@ -1,3 +1,7 @@
+# Disclaimer
+
+This work is all community work and none of it has been tested by System76 QA or Engineering. This is not officially supported by the System76 Happiness Team (Tech Support). YMMV as always. 
+
 a bash script to auto-magically install the System76 Drivers on Arch-based systems which you can find here: https://github.com/ahoneybun/Install-Other-System76/blob/main/Arch-based/install-software.sh
 
 ## Arch-LUKS-systemd-boot-install
