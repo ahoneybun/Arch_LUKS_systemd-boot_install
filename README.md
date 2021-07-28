@@ -101,8 +101,10 @@ mkswap -L swap /dev/***p3
 
 ```
 mount /dev/mapper/crypt-root /mnt
+mount /dev/***p1 /mnt/boot
 swapon /dev/***p3
 ```
+
 
 ### Install Arch
 
@@ -110,16 +112,10 @@ swapon /dev/***p3
 pacstrap /mnt base base-devel linux linux-headers linux-firmware nano lvm2
 ```
 
-### Mount /boot
-
-```
-mount /dev/***p1 /mnt/boot
-```
-
 ### FStab 
 
 ```
-genfsab -U /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
 ### Chroot
