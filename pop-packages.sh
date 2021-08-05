@@ -122,6 +122,23 @@ cd ..
 
 sleep 5
 
+echo "--------------------"
+echo " Setting shortcuts  |"
+echo "--------------------"
+
+gsettings set org.gnome.desktop.wm.keybindings close ['<Super>q']
+gsettings set org.gnome.desktop.wm.keybindings
+gsettings set org.gnome.desktop.wm.keybindings 
+
+echo "--------------------"
+echo " Setting theming   |"
+echo "--------------------"
+
+gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
+gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
+gsettings set org.gnome.desktop.interface icon-theme 'Pop'
+gsettings set org.gnome.desktop.interface font-name 'Fira Sans Semi-Light 10'
+
 # Clean up
 # ---
 
