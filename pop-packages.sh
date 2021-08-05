@@ -139,6 +139,12 @@ gsettings set org.gnome.desktop.interface gtk-theme "Pop-dark"
 gsettings set org.gnome.desktop.interface icon-theme "Pop"
 gsettings set org.gnome.desktop.interface font-name "Fira Sans Semi-Light 10"
 
+gsettings set org.gnome.desktop.wm.preferences titlebar-font "Fira Sans Semi-Bold 10"
+gsettings set org.gnome.desktop.wm.preferences theme "Pop"
+
+gsettings set org.gnome.mutter.keybindings toggle-tiled-left ['<Primary><Super>Left', '<Primary><Super>KP_Left', '<Primary><Super>h']
+gsettings set org.gnome.mutter.keybindings toggle-tiled-right ['<Primary><Super>Right', '<Primary><Super>KP_Right', '<Primary><Super>l']
+
 # Clean up
 # ---
 
