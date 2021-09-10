@@ -1,12 +1,5 @@
-# Disclaimer
+# Arch LUKS systemd-boot install
 
-This work is all community work and none of it has been tested by System76 QA or Engineering. This is not officially supported by the System76 Happiness Team (Tech Support). YMMV as always. 
-
-There is a bash script to auto-magically install the System76 Drivers on Arch-based systems after you are finished installing the OS can be found here: 
-
-https://github.com/ahoneybun/Install-Other-System76/blob/main/Arch-based/install-software.sh
-
-## Arch-LUKS-systemd-boot-install
 Config files and steps to install Arch encrypted LUKS and systemd-boot as the bootloader.
 
 This is the end partition layout using the steps below:
