@@ -78,10 +78,27 @@ Next we'll open the partition to install Arch:
 cryptsetup luksOpen /dev/***p2 crypt-root
 ```
 
+Now we will create our encrypted Swap partition
+
+```
+cryptsetup luksFormat -v -s 512 -h sha512 /dev/***p3
+cryptsetup luksOpen /dev/***p3 crypt-swap
+mkswap -L swap /dev/mapper/crypt-swap
+```
+
 Now the partition will be at the following location:
 
 ```
 ls /dev/mapper/
+```
+
+Set the swap to mount on boot by editing the `/etc/initcpio/hooks/openswap` file with this content:
+
+```
+run_hook ()
+{
+    cryptsetup open /dev/<device> swapDevice
+}
 ```
 
 ### Format the partitions
@@ -89,7 +106,6 @@ ls /dev/mapper/
 ```
 mkfs.fat -F32 -n EFI /dev/***p1
 mkfs.ext4 -L root /dev/mapper/crypt-root
-mkswap -L swap /dev/***p3
 ```
 
 ### Mount the partitions
@@ -172,6 +188,12 @@ HOOKS=(base udev autodetect modconf block keyboard encrypt lvm2 filesystems fsck
 Or this layout if you want to hibernate:
 
 ```
+HOOKS=(base udev autodetect modconf block keyboard encrypt lvm2 filesystems openswap resume fsck)
+```
+
+Or this if you are using an enecypted swap:
+
+```
 HOOKS=(base udev autodetect modconf block keyboard encrypt lvm2 filesystems resume fsck)
 ```
 
@@ -208,6 +230,12 @@ Use this line if you are going to hibernate:
 
 ```
 options cryptdevice=/dev/nvme0n1p2:crypt-root root=/dev/mapper/crypt-root resume=/dev/nvme0n1p3 rw
+```
+
+Use thi if you are using an encrypted swap partition to hibernate:
+
+```
+options cryptdevice=/dev/nvme0n1p2:crypt-root root=/dev/mapper/crypt-root  resume=/dev/mapper/crypt-swap rw
 ```
 
 **NOTE:**
