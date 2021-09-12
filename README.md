@@ -1,5 +1,7 @@
 # Arch LUKS systemd-boot install
 
+> NOTE: The encrypted swap sections are still WIP's so don't use them on a production system. 
+
 Config files and steps to install Arch encrypted LUKS and systemd-boot as the bootloader.
 
 This is the end partition layout using the steps below:
