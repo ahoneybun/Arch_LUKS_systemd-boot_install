@@ -96,6 +96,7 @@ mkswap -L swap /dev/***p3
 
 ```
 mount /dev/mapper/crypt-root /mnt
+mkdir /mnt/boot/
 mount /dev/***p1 /mnt/boot
 swapon /dev/***p3
 ```
